@@ -106,3 +106,29 @@ function operar(operacion, a, b){
 
 let v1 = operar(sumar, 3, 5); // 8
 let v2 = operar(restar, 3, 5); // -2
+
+let sumar = function(a, b) {
+    return a + b;
+}
+
+let v1 = sumar(5,7); // 12
+
+let sumar = function sumar(a, b) {
+    return a + b;
+}
+
+let v2 = sumar()
+
+function confirmar(pregunta, si, no) {
+        if (confirm(pregunta))
+    si(); // Se ejecuta la función de callback pasada en el parámetro 'si'
+        else
+    no(); // Se ejecuta la función de callback pasada en el parámetro 'no'
+}
+// Las funciones de callback se crean in situ como anónimas
+
+confirmar("¿Sabes qué es un callback?", function() {
+    console.log("Has respondido que sí");
+}, function() {
+    console.log("Has respondido que no");
+});
