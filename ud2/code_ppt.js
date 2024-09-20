@@ -132,3 +132,53 @@ confirmar("¿Sabes qué es un callback?", function() {
 }, function() {
     console.log("Has respondido que no");
 });
+
+let func = (par1, par2, ... parN) => expresión;
+
+function sumar(a, b) {
+    return a + b;
+}
+
+function restar(a, b) {
+    console.log("Restando...");
+    return a - b;
+}
+
+// El cuerpo de la función solo tiene una línea. 
+// Se pueden omitir las llaves y el 'return'
+let sumar = (a, b) => a + b;
+
+// El cuerpo de la función tiene varias líneas.
+// Se deben incluir las llaves y el 'return'
+let restar = (a, b) => {
+    console.log("Restando...");
+    return a - b;
+}
+
+function sumar(a, b) {
+    return a + b;
+}
+
+let numeros1 = [4, 6];
+sumar(...numeros1); // 10
+
+function sumar(a, b) {
+    return a + b;
+}
+
+let numeros1 = [4, 6];
+sumar(...numeros1); // 10
+
+let colores1 = ['azul', 'rojo', 'verde'];
+let colores2 = colores1; // no es una copia, es una referencia
+// solo hay un array y dos variables que apuntan a él
+let colores3 = [...colores1]; // copia de array en uno nuevo
+// hay dos arrays diferentes
+let colores4 = ['cian', ...colores1, 'amarillo'];
+// colores4 almacena un array nuevo con nuevos elementos
+// Modifico el primer array
+colores2[0] = 'blanco';
+console.log(colores1[0]); // blanco
+console.log(colores2[0]); // blanco (mismo array)
+console.log(colores4.length); // 5
+console.log(colores4); // ['cian', 'azul', 'rojo', 'verde', 'amarillo']
