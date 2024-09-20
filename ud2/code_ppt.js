@@ -182,3 +182,21 @@ console.log(colores1[0]); // blanco
 console.log(colores2[0]); // blanco (mismo array)
 console.log(colores4.length); // 5
 console.log(colores4); // ['cian', 'azul', 'rojo', 'verde', 'amarillo']
+
+function crearContador() {
+    let cuenta = 0;
+    // Función closure
+    return function() {
+        // Referencia a la variable "cuenta" del ámbito exterior a la función
+        return cuenta++;
+    };
+}
+
+let contador1 = crearContador();
+console.log(contador1()); // 0
+console.log(contador1()); // 1
+console.log(contador1()); // 2
+
+let contador2 = crearContador();
+console.log(contador2()); // 0
+console.log(contador2()); // 1
