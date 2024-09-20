@@ -71,3 +71,38 @@ let respuesta = prompt("Texto para mostrar", "Valor por defecto del cuadro de te
 
 let acepta = confirm("¿Estás seguro de que quieres continuar?");
 // acepta almacena true si el usuario pulsa "Aceptar" y false si pulsa "Cancelar"
+
+let acepta = confirm("¿Estás seguro de que quieres continuar?");
+// acepta almacena true si el usuario pulsa "Aceptar" 
+// y false si pulsa "Cancelar"
+
+////////FUNCIONES////////
+
+function pintar(color="blanco") {
+    console.log(`Pintando con color ${color}`);
+}
+
+pintar(); // Pintando con color blanco
+pintar("azul"); // Pintando con color azul
+
+function sumar(a,b){
+    return a + b;
+}
+
+let suma1 = sumar(3,5); // 8
+let funcSuma = sumar; /* funcSuma es una referencia 
+                         a la función sumar, no se ejecuta*/
+let suma2 = funcSuma(4,6); // 10
+
+function sumar(a,b){
+    return a + b;
+}
+function restar(a,b){
+    return a - b;
+}
+function operar(operacion, a, b){
+    return operacion(a,b);
+}
+
+let v1 = operar(sumar, 3, 5); // 8
+let v2 = operar(restar, 3, 5); // -2
