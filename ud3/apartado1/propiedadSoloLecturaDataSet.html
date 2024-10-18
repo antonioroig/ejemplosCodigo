@@ -1,0 +1,18 @@
+<div class="principal">
+    <ul class="personas">
+	<li class="persona" data-nombre="P1">Persona 1</li>
+	<li class="persona" data-nombre="P2">Persona 2</li>
+    </ul>
+</div>
+
+
+
+<script>
+// La propiedad de solo lectura dataset de la interfaz HTMLElement
+// proporciona acceso de lectura/escritura a atributos de datos 
+// personalizados ( data-*) en elementos. 
+// Todos los atributos que comienzan con “data-” están reservados 
+// para el uso de los programadores. Están disponibles en la propiedad dataset.
+ let persona1 = document.querySelector(".persona");
+ alert(persona1.dataset.nombre); // P1
+</script>

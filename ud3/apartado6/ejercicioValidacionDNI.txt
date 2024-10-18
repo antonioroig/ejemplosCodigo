@@ -1,0 +1,17 @@
+Validación de un documento de identidad
+
+¿Qué expresión regular utilizarías para comprobar un documento de identidad ficticio de 10 caracteres con las siguientes reglas?
+
+•   Carácter 1: un número entre 0 y 9 o una letra A, B o C.
+
+•   Caracteres 2 a 8: números entre 0 y 9.
+
+•   Carácter 9: una letra X, Y o Z.
+
+•   Carácter 10: un número entre 1 y 5.
+
+Crea en JavaScript varios ejemplos de documentos de identidad válidos y no válidos de ejemplo y escribe el código para testear el correcto funcionamiento de la expresión.
+
+Divide el problema en cuatro partes: el primer carácter, los siete siguientes, el carácter 9 y el último.
+Recuerda que los corchetes [] permiten definir caracteres y rangos de los que elegir ([LM] hace referencia al carácter L o al carácter M).
+Idealmente, debes permitir mayúsculas y minúsculas.

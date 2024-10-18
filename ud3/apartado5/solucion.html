@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<title>Unidad 3 - Caso práctico 4</title>
+    </head>
+    <body>
+	<!-- Plancilla HTML -->
+	<template id="mi-chiste">
+	    <div>
+		<span id="enunciado"></span>
+		<button>Ver respuesta</button>
+	    </div>
+	</template>
+
+
+	<script>
+	 let chistes = [
+	     {
+		 enunciado: "¿Qué le dice un bit a otro?",
+		 respuesta: "Nos vemos en el bus."
+	     },
+	     {
+		 enunciado: "¿Qué es un terapeuta?",
+		 respuesta: "1024 GigaPeutas."
+	     },
+	     {
+		 enunciado: "¿Cuántos programadores hacen falta para cambiar una bombilla?",
+		 respuesta: "Ninguno, porque es un problema de hardware."
+	     }
+	 ]
+
+	 // Clase del elemento personalizado <mi-chiste>
+	 class MiChiste extends HTMLElement {
+	     constructor() {
+		 super();
+	     }
+
+	     // Debemos poner la funcionalidad aquí porque 'this.chiste' solo estará
+	     // definido cuando se cree el objeto en el DOM.
+	     connectedCallback() {
+		 // Creamos el Shadow DOM
+		 const shadow = this.attachShadow({mode: 'open'});
+
+		 // Cargamos la plantilla
+		 let plantilla = document.getElementById('mi-chiste'); // Elemento <template>
+		 let plantillaContenido = plantilla.content; // Contenido de la plantilla (nodo tipo 'DocumentFragment')
+
+		 // Se añade al Shadow DOM una COPIA de la plantilla
+		 shadow.append(plantillaContenido.cloneNode(true));
+
+		 // Añadimos el enunciado. Los datos del objeto 'chiste' están disponibles
+		 // en 'this.miChiste'
+		 let texto = shadow.querySelector("#enunciado");
+		 texto.textContent = this.miChiste.enunciado;
+
+		 // Buscamos el botón dentro del Shadow DOM
+		 let boton = shadow.querySelector("button");
+
+		 // Manejador de evento 'click'
+		 // Función flecha: si se usara una función convencional, la función se ejecutaría
+		 // sin contexto de objeto, por lo que 'this' apuntaría al objeto global
+		 boton.addEventListener("click", () => {
+		     alert(this.miChiste.respuesta);
+		 });
+	     }
+	 }
+
+	 // Registro del componente personalizado
+	 customElements.define('mi-chiste', MiChiste);
+
+
+	 // Creamos los elementos
+	 for (let chiste of chistes) {
+	     // Creamos un elemento <mi-chiste>
+	     let elChiste = document.createElement("mi-chiste");
+
+	     // Añadimos al elemento creado el objeto 'chiste' en su propiedad 'miChiste'
+	     elChiste.miChiste = chiste;
+
+	     // Añadimos el elemento a la página
+	     document.body.append(elChiste);
+	 }
+	</script>
+    </body>
+
+</html>

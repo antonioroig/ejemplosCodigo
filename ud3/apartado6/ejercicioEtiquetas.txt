@@ -1,0 +1,21 @@
+Filtrado de datos con expresiones regulares
+
+Se desea realizar una función que reciba una cadena con un listado de etiquetas y devuelva un array con las etiquetas que haya presentes.
+
+Las etiquetas estarán formadas únicamente por caracteres alfanuméricos (letras y números). Para dar facilidades a los usuarios, podrán estar separadas de diferentes maneras: ,, ., :, ;, espacio en blanco, etcétera.
+
+En la siguiente pantalla, dispones del archivo DWEC_U03_A05_CP_E.js, con ejemplos de uso de la función.
+
+SOLUCIÓN:
+
+La forma más sencilla de conseguirlo es mediante expresiones regulares. Para ello, debemos filtrar los caracteres alfanuméricos y descartar el resto. Esto puede conseguirse mediante /[a-z0-9]+/g. El carácter + significa «uno o más caracteres» (lo utilizamos para no obtener cadenas vacías).
+
+La función se encargaría de utilizar el método match para obtener los resultados. Un ejemplo de código sería:
+
+
+
+function obtenerEtiquetas(cadena) {
+
+   return cadena.match(/[a-z0-9]+/g);
+
+}

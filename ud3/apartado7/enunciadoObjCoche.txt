@@ -1,0 +1,7 @@
+Escribe un programa que efectúe lo siguiente:
+
+Crear tres objetos coche a partir del constructor.
+Almacenar dichos objetos en un array.
+Guardar el array de objetos en el almacenamiento local, en la clave coches.
+Recuperar la lista de objetos del almacenamiento local.
+Crear una nueva lista de objetos completamente funcionales (que puedan ejecutar el método arrancar) a partir de la lista recuperada.

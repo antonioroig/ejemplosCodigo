@@ -1,0 +1,5 @@
+obtenerEtiquetas("eti1, eti2, eti3"); // ["eti1", "eti2", "eti3"]
+obtenerEtiquetas("eti1 eti2 eti3"); // ["eti1", "eti2", "eti3"]
+obtenerEtiquetas("eti1:eti2:eti3"); // ["eti1", "eti2", "eti3"]
+obtenerEtiquetas("eti1, eti2   ;  eti3"); // ["eti1", "eti2", "eti3"]
+obtenerEtiquetas("eti1.eti2  ,eti3"); // ["eti1", "eti2", "eti3"]

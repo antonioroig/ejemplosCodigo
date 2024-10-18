@@ -1,0 +1,22 @@
+<div class="clase1 clase2">
+    Clases
+</div>
+
+<script>
+ let div1 = document.querySelector(".clase1");
+
+ div1.classList.add("clase3");
+ console.log(div1.className); // clase1 clase2 clase3
+
+ div1.classList.remove("clase2");
+ console.log(div1.className);  // clase1 clase3
+
+ div1.classList.toggle("clase4");
+ console.log(div1.className);  // clase1 clase3 clase4
+ console.log(div1.classList.contains("clase4")); // true
+
+ div1.classList.toggle("clase4");
+ console.log(div1.className);  // clase1 clase3
+
+ console.log(div1.classList.contains("clase4")); // false
+</script>

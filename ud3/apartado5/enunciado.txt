@@ -1,0 +1,16 @@
+Crea un programa en JavaScript que muestre para cada chiste un elemento <mi-chiste> que contenga el enunciado y un botón con el texto «Ver respuesta». Al pulsar en el botón, se debe mostrar mediante un alert la respuesta correspondiente. Debes utilizar:
+
+Una plantilla HTML para crear la estructura formada por el enunciado y el botón.
+Un componente personalizado que se encargue de realizar las siguientes tareas:
+Cargar la plantilla.
+Añadirla al componente usando el Shadow DOM.
+Añadir el texto del enunciado y el manejador de eventos del botón. Los datos del objeto chiste se pasarán en una propiedad del elemento en el momento de su creación.
+
+A continuación, se muestra el código de la solución. Como nota que destacar, se puede comprobar que addEventListener utiliza una función manejadora de eventos, en lugar del objeto manejador de eventos que usamos en la versión del Caso práctico 2. La explicación es la siguiente:
+
+En el Caso práctico 2, el objeto chiste se asocia al elemento <button> a través de addEventListener.
+En esta versión, el objeto chiste se asocia al elemento <mi-chiste> pasándolo como propiedad de este. No podemos hacerlo vía addEventListener, ya que dicha función es llamada de manera interna, en la lógica del elemento.
+
+
+En la siguiente pantalla, dispones del archivo DWEC_U03_A04_CP_S.html, con el código de la solución.
+

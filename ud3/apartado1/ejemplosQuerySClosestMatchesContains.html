@@ -1,0 +1,24 @@
+<div class="principal">
+    <ul class="personas">
+	<li class="persona">Persona 1</li>
+	<li class="persona">Persona 2</li>
+    </ul>
+</div>
+
+<script>
+ let personas = document.querySelector(".personas");
+ let persona1 = document.querySelector(".persona");
+
+ console.log(persona1.closest(".personas")); // <ul class="personas"> // ancestro más cercano
+ console.log(persona1.closest(".principal")); // <div class="principal">
+
+ console.log(persona1.closest(".principal")); // <div class="principal"> 
+ console.log(persona1.closest(".personas")); // <ul class="personas">
+
+ console.log(personas.matches(".principal .personas")); // true // comprueba que el elemento coincide con los selectores css
+ console.log(personas.matches(".principal")); // false
+
+ console.log(personas.contains(persona1)); // true // si persona1 es descendiente de personas o si personas === persona1
+ console.log(persona1.contains(personas)); // false
+
+</script>
